@@ -61,8 +61,8 @@ public class Snake : MonoBehaviour
     {
         for (int i = 0; i < count; i++)
         {
-            speed += 0.4f;  // Her segment eklemede hızı da artırmak istersen
-            Grow();         // Tek tek segment ekleyen mevcut Grow() metodunu çağır
+            speed += 0.4f; 
+            Grow();        
         }
     }
 

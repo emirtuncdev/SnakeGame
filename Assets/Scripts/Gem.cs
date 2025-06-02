@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class Gem : MonoBehaviour
 {
-    public int scoreValue = 10; // Gem'in puan deðeri
+    public int scoreValue = 10; 
     public AudioClip gemSound;
     AudioSource audioSource;
-    private bool isCollected = false; // Gem'in toplanýp toplanmadýðýný kontrol etmek için
+    private bool isCollected = false; 
     private Snake snake;
 
     private void Start()
@@ -19,12 +19,12 @@ public class Gem : MonoBehaviour
         if (isCollected) return;
         if (!other.CompareTag("Player")) return;
 
-        isCollected = true; // Gem toplandý
-        ScoreManager.Instance.AddScore(scoreValue); // Puan ekle
+        isCollected = true; 
+        ScoreManager.Instance.AddScore(scoreValue); 
         Snake snake = other.GetComponent<Snake>();
         if (snake != null)
         {
-            // Örneðin: Gem yendiðinde 3 segment eklensin
+           
             snake.GrowMultiple(5);
         }
 
@@ -32,14 +32,14 @@ public class Gem : MonoBehaviour
         Collider2D collider = GetComponent<Collider2D>();
         if (collider != null)
         {
-            collider.enabled = false; // Gem'in collider'ýný devre dýþý býrak
+            collider.enabled = false; 
         }
         if (audioSource != null && gemSound != null)
         {
-            audioSource.PlayOneShot(gemSound); // Ses çal
+            audioSource.PlayOneShot(gemSound); 
         }
 
-        Destroy(gameObject, gemSound.length); // Gem'i yok et, sesin bitmesi için kýsa bir süre bekle
+        Destroy(gameObject, gemSound.length); 
     }
 
 }
