@@ -92,7 +92,7 @@ public class MysteryBox : MonoBehaviour
 
         float roll = Random.value;
        
-        if (roll < 0.40f && gemPrefab != null)
+        if (roll < 0.75f && gemPrefab != null)
         {
             GameObject gemInstance = Instantiate(gemPrefab, spawnPos, Quaternion.identity);
             Destroy(gemInstance, gemLifetime);
