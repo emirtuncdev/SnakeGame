@@ -1,21 +1,25 @@
-﻿using UnityEngine;
+﻿// Snake.cs
+using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Snake : MonoBehaviour
 {
-    public  AudioClip eatSound;
+    public AudioClip eatSound;
     public AudioClip gameOverSound;
     private AudioSource audioSource;
     private Vector2 _direction = Vector2.right;
-    public float speed=5;
-    Rigidbody2D rb;
+    public float speed = 5f;
+    private Rigidbody2D rb;
     private List<Transform> _segments;
     public Transform segmentPrefab;
-    int coinCount = 0;
-    private int score;
     [SerializeField] private TMP_Text scoreText;
-    public void Awake()
+
+    private float speedReductionPerSegment = 0.6f;
+
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
@@ -23,84 +27,91 @@ public class Snake : MonoBehaviour
 
     private void Start()
     {
-        score = 0;
-        scoreText.text = score.ToString();
-        _segments = new List<Transform>();
-        _segments.Add(this.transform);
+        _segments = new List<Transform> { transform };
     }
+
     private void Update()
     {
-        scoreText.text = score.ToString();
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            _direction = Vector2.up;
-        }
-        else if (Input.GetKeyDown(KeyCode.S))
-        {
-            _direction = Vector2.down;
-        }
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-            _direction = Vector2.left;
+        scoreText.text = ScoreManager.Instance.GetTotalScore().ToString();
 
-        }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            _direction = Vector2.right;
-        }
+        if (Input.GetKeyDown(KeyCode.W)) _direction = Vector2.up;
+        else if (Input.GetKeyDown(KeyCode.S)) _direction = Vector2.down;
+        else if (Input.GetKeyDown(KeyCode.A)) _direction = Vector2.left;
+        else if (Input.GetKeyDown(KeyCode.D)) _direction = Vector2.right;
     }
 
     private void FixedUpdate()
     {
-        for(int i = _segments.Count - 1; i > 0; i--)
+        for (int i = _segments.Count - 1; i > 0; i--)
         {
             _segments[i].position = _segments[i - 1].position;
         }
-        Vector2 position = rb.position + _direction * speed * Time.fixedDeltaTime;
-        rb.MovePosition(position);
+
+        Vector2 newPos = rb.position + _direction * speed * Time.fixedDeltaTime;
+        rb.MovePosition(newPos);
     }
-    private void Grow()
+
+    public void Grow()
     {
         Transform segment = Instantiate(segmentPrefab);
         segment.position = _segments[_segments.Count - 1].position;
         _segments.Add(segment);
     }
-
-    private void ResetState()
+    public void GrowMultiple(int count)
     {
-       
-        for (int i=1;i < _segments.Count; i++)
+        for (int i = 0; i < count; i++)
         {
-            Destroy(_segments[i].gameObject);
+            speed += 0.4f;  // Her segment eklemede hızı da artırmak istersen
+            Grow();         // Tek tek segment ekleyen mevcut Grow() metodunu çağır
         }
-        _segments.Clear();
-        _segments.Add(this.transform);
-
-
-        this.transform.position = Vector2.zero;
     }
+
+
+    public void Shrink(int count)
+    {
+        int removeCount = Mathf.Min(count, _segments.Count - 1);
+        for (int i = 0; i < removeCount; i++)
+        {
+            Transform segmentToRemove = _segments[_segments.Count - 1];
+            _segments.RemoveAt(_segments.Count - 1);
+            Destroy(segmentToRemove.gameObject);
+            speed = Mathf.Max(0f, speed - speedReductionPerSegment);
+        }
+        if (_segments.Count <= 1)
+            StartCoroutine(HandleGameOver());
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Food")
+        if (other.CompareTag("Food"))
         {
-            score++;
-            speed= speed + 0.4f;
+            ScoreManager.Instance.AddScore(1);
             Grow();
+            speed += 0.4f;
+
             if (audioSource != null && eatSound != null)
+                audioSource.PlayOneShot(eatSound);
+
+            yem fruitScript = other.GetComponent<yem>();
+            if (fruitScript != null)
             {
-               audioSource.PlayOneShot(eatSound);
+                fruitScript.RandomizePosition();
+                fruitScript.RandomizeSprite();
             }
         }
-        else if (other.tag == "Obstacle")
+        else if (other.CompareTag("Obstacle"))
         {
             if (audioSource != null && gameOverSound != null)
-            {
                 audioSource.PlayOneShot(gameOverSound);
-            }
-            ResetState();
+            StartCoroutine(HandleGameOver());
         }
-       
-
     }
 
+    private IEnumerator HandleGameOver()
+    {
+        yield return new WaitForSeconds(0.3f);
+        Destroy(gameObject);
+        ScoreManager.Instance.ResetScore();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }

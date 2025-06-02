@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1ae6629e54dcd3a4d826c9c82997a6c2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - animasyon: {instanceID: 0}
+  - openBoxSound: {instanceID: 0}
+  - spawner: {instanceID: 0}
+  - gemPrefab: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
