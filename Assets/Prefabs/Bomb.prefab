@@ -78,7 +78,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.3, y: 1.3}
   m_EdgeRadius: 0
 --- !u!114 &7128988692861851946
 MonoBehaviour:
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 5033180708955247871, guid: 152689d6752175f4fa353ae19681fb33, type: 3}
   explosionSound: {fileID: 8300000, guid: a72d541f00743b04fbabb027d595f161, type: 3}
-  segmetsToShrink: 4
+  segmetsToShrink: 10
   speedReductionPerSegment: 1
 --- !u!82 &2703482049483929509
 AudioSource:

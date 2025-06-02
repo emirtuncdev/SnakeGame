@@ -24,7 +24,6 @@ public class Gem : MonoBehaviour
         Snake snake = other.GetComponent<Snake>();
         if (snake != null)
         {
-           
             snake.GrowMultiple(5);
         }
 

@@ -85,15 +85,24 @@ public class MysteryBox : MonoBehaviour
 
     private IEnumerator HandleOpenSpawnGemOrBomb()
     {
-        yield return new WaitForSeconds(openAnimationDuration);
-        yield return new WaitForSeconds(0.2f);
-
         Vector3 spawnPos = transform.position;
-
         float roll = Random.value;
-       
-        if (roll < 0.75f && gemPrefab != null)
+        bool isBoom = false;
+        if (roll < 0.40f && gemPrefab != null)
         {
+
+        }
+        else if (bombPrefab != null)
+        {
+            isBoom = true;
+
+        }
+
+
+        if (!isBoom && gemPrefab != null)
+        {
+            yield return new WaitForSeconds(openAnimationDuration);
+            yield return new WaitForSeconds(0.2f);
             GameObject gemInstance = Instantiate(gemPrefab, spawnPos, Quaternion.identity);
             Destroy(gemInstance, gemLifetime);
         }

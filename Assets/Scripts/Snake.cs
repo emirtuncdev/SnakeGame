@@ -17,6 +17,7 @@ public class Snake : MonoBehaviour
     public Transform segmentPrefab;
     [SerializeField] private TMP_Text scoreText;
 
+    
     private float speedReductionPerSegment = 0.6f;
 
     private void Awake()
@@ -45,8 +46,9 @@ public class Snake : MonoBehaviour
         for (int i = _segments.Count - 1; i > 0; i--)
         {
             _segments[i].position = _segments[i - 1].position;
+            _segments[i].localScale = Vector3.one *.75f + /*Vector3.one * (0.25f * i)+*/Vector3.one*speed/50f; // Scale segments based on their index
         }
-
+        transform.localScale= Vector3.one * 1f + /*Vector3.one * (0.25f * i)+*/Vector3.one * speed / 50f; //
         Vector2 newPos = rb.position + _direction * speed * Time.fixedDeltaTime;
         rb.MovePosition(newPos);
     }
@@ -61,12 +63,12 @@ public class Snake : MonoBehaviour
     {
         for (int i = 0; i < count; i++)
         {
-            speed += 0.4f; 
+            speed += speedReductionPerSegment; // Increase speed with each segment added
             Grow();        
         }
     }
 
-
+    //burası segmentleri küçültmek için kullanılıyor
     public void Shrink(int count)
     {
         int removeCount = Mathf.Min(count, _segments.Count - 1);
@@ -87,7 +89,7 @@ public class Snake : MonoBehaviour
         {
             ScoreManager.Instance.AddScore(1);
             Grow();
-            speed += 0.4f;
+            speed += 0.8f;
 
             if (audioSource != null && eatSound != null)
                 audioSource.PlayOneShot(eatSound);
