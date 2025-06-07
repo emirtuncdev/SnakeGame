@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f2f05695883b514b9db47aa0d1ea68a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 10
+  scoreValue: 20
   gemSound: {fileID: 8300000, guid: 6ee6b8cbcad7c964da54be0703c74bf9, type: 3}
 --- !u!61 &1284218018738471435
 BoxCollider2D:

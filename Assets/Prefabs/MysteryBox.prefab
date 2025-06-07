@@ -106,7 +106,7 @@ MonoBehaviour:
   animasyon: {fileID: 3277031982097796197}
   openBoxSound: {fileID: 8300000, guid: 88926fd8320dead45845963c935b4a08, type: 3}
   openAnimationDuration: 0.7
-  gemLifetime: 5
+  gemLifetime: 3
   idleLifetime: 10
   spawner: {fileID: 0}
   gemPrefab: {fileID: 6220280194945361457, guid: a171739998c317d4a96b63e83541befa, type: 3}

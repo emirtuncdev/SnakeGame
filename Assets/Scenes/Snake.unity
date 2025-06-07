@@ -502,7 +502,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -1.3376153, y: 0.14177036}
+  m_Offset: {x: -1.337615, y: -1.2018139}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -512,7 +512,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 17.371134, y: 20.333746}
+  m_Size: {x: 17.371134, y: 17.646578}
   m_EdgeRadius: 0
 --- !u!212 &230049253
 SpriteRenderer:
@@ -855,7 +855,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 17.7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1186,7 +1186,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0015273094, y: -0.07519913}
+  m_Offset: {x: 0.0015277863, y: -1.421942}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1196,7 +1196,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 20.594196, y: 21.226082}
+  m_Size: {x: 20.594196, y: 18.532597}
   m_EdgeRadius: 0
 --- !u!212 &964464534
 SpriteRenderer:
@@ -1366,7 +1366,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 320.44867, y: -153.68869}
+  m_AnchoredPosition: {x: 539, y: -264}
   m_SizeDelta: {x: 448.8974, y: 127.3774}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1360893433
@@ -1512,6 +1512,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1441586220
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1441586221}
+  - component: {fileID: 1441586222}
+  m_Layer: 0
+  m_Name: BombSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1441586221
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441586220}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 258.34326, y: 294.93887, z: -3.2217097}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1441586222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441586220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ed361c0432e9404abd03c9049b6947b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombPrefab: {fileID: 3206325683524137502, guid: bcb7ef6d4c2172041bb28db76ea92f12, type: 3}
+  gridArea: {fileID: 487382093}
+  spawnInterval: 3
+  bombLifetime: 3
+  levelDuration: 30
 --- !u!1 &1636488527
 GameObject:
   m_ObjectHideFlags: 0
@@ -1666,7 +1715,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.47920203, y: 0.2636261}
+  m_Offset: {x: -0.47920227, y: 2.0220942}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1676,7 +1725,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 16.18674, y: 21.481594}
+  m_Size: {x: 16.18674, y: 17.964657}
   m_EdgeRadius: 0
 --- !u!212 &1886583659
 SpriteRenderer:
@@ -1855,7 +1904,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.016285896, y: -0.12010193}
+  m_Offset: {x: 0.016285896, y: 0.8654108}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1865,7 +1914,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 20.575724, y: 20.662567}
+  m_Size: {x: 20.575724, y: 18.691542}
   m_EdgeRadius: 0
 --- !u!1001 &942065472793074338
 PrefabInstance:
@@ -1881,12 +1930,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3171507323563886611, guid: 560551c20d3acdd46a935afa80119654, type: 3}
       propertyPath: speed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3171507323563886611, guid: 560551c20d3acdd46a935afa80119654, type: 3}
       propertyPath: eatSound
       value: 
       objectReference: {fileID: 8300000, guid: 45e46120a56617949ae2de259716f1c9, type: 3}
+    - target: {fileID: 3171507323563886611, guid: 560551c20d3acdd46a935afa80119654, type: 3}
+      propertyPath: maxSpeed
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 3171507323563886611, guid: 560551c20d3acdd46a935afa80119654, type: 3}
       propertyPath: scoreText
       value: 
@@ -1969,3 +2022,4 @@ SceneRoots:
   - {fileID: 1636488529}
   - {fileID: 687113686}
   - {fileID: 1364711273}
+  - {fileID: 1441586221}

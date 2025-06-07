@@ -4,22 +4,22 @@ using UnityEngine;
 public class MysteryBox : MonoBehaviour
 {
     [Header("Animasyon & Ses")]
-    public Animator animasyon;               // Inspector’dan atanacak Animator
-    public AudioClip openBoxSound;           // (Opsiyonel) açılma sesi
-    public float openAnimationDuration = 0.7f; // “Boxx_Open” animasyonu süresi
+    public Animator animasyon;               
+    public AudioClip openBoxSound;           
+    public float openAnimationDuration = 0.7f; 
 
     public float gemLifetime = 5f;
 
     [Header("Timeout Ayarı")]
     [Tooltip("Yılan dokunmazsa bu süre sonra kutu yok olacak")]
-    public float idleLifetime = 10f;         // Spawn olduktan sonra kaç saniye bekleyip yok olacak
+    public float idleLifetime = 10f;         
 
     [Header("Spawner Referansı")]
     [HideInInspector] public MysteryBoxSpawner spawner;
 
     [Header("İçinden Çıkacak Obje")]
-    public GameObject gemPrefab;             // Gem prefab’ı
-    public GameObject bombPrefab;            // Bomba prefab’ı
+    public GameObject gemPrefab;             
+    public GameObject bombPrefab;            
 
     private Coroutine lifeCoroutine;
     private AudioSource audioSource;
@@ -88,7 +88,7 @@ public class MysteryBox : MonoBehaviour
         Vector3 spawnPos = transform.position;
         float roll = Random.value;
         bool isBoom = false;
-        if (roll < 0.40f && gemPrefab != null)
+        if (roll < 0.70f && gemPrefab != null)
         {
 
         }

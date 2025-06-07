@@ -1,0 +1,12 @@
+# ninja log v5
+175	549	7706758120411231	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	16807ca8e59cb0ab
+552	1004	7706758124710374	C:/dosya time/SnakeGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4i3h2i6a/obj/arm64-v8a/libswappywrapper.so	1baa618661cf1c2e
+64	1981	7706758134647540	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	e3642ee2f461e430
+46	2023	7706758135072689	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	fbb2600d14e2e948
+30	2058	7706758135442773	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	67bd39de0e0f824b
+17	2100	7706758135892883	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	dd3eb3adbbbe60b0
+139	2116	7706758136062914	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	356cb6cce6ffc6e4
+109	2179	7706758136703104	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	eaeddedb97a6dc18
+81	2296	7706758137860601	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	9b60d7047f943ca0
+2	2352	7706758138424431	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	31aa45687f740c73
+2353	2530	7706758140210700	C:/dosya time/SnakeGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4i3h2i6a/obj/arm64-v8a/libgame.so	ded9f838435f80f1

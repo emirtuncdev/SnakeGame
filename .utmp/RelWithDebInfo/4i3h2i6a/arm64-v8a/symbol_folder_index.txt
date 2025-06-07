@@ -1,0 +1,1 @@
+C:\dosya time\SnakeGame\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\cxx\RelWithDebInfo\4i3h2i6a\obj\arm64-v8a

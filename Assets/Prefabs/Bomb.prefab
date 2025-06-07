@@ -95,7 +95,7 @@ MonoBehaviour:
   explosionPrefab: {fileID: 5033180708955247871, guid: 152689d6752175f4fa353ae19681fb33, type: 3}
   explosionSound: {fileID: 8300000, guid: a72d541f00743b04fbabb027d595f161, type: 3}
   segmetsToShrink: 10
-  speedReductionPerSegment: 1
+  speedReductionPerSegment: 2
 --- !u!82 &2703482049483929509
 AudioSource:
   m_ObjectHideFlags: 0

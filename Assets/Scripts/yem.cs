@@ -1,4 +1,4 @@
-﻿// yem.cs
+﻿
 using UnityEngine;
 
 public class yem : MonoBehaviour
